@@ -1,0 +1,24 @@
+- task: Npm@1
+  displayName: npm install
+  inputs:
+    verbose: true
+
+- task: Npm@1
+  displayName: npm build
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'run build'
+
+- task: ArchiveFiles@2
+  displayName: Archive dist
+  inputs:
+    rootFolderOrFile: dist
+    includeRootFolder: false
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish Artifact: drop
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+
+
