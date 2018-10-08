@@ -14,7 +14,8 @@
     "Sparrowdo::VSTS::YAML::Angular::Build" : "lib/Sparrowdo/VSTS/YAML/Angular/Build.pm6"
   },
   "resources" : [
-    "build.yaml"
+    "build.yaml",
+    "build.pl"
   ],
   "source-type" : "git",
   "source-url" : "https://github.com/melezhik/sparrowdo-vsts-angular-build.git",

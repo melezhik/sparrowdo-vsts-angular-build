@@ -3,12 +3,12 @@
   inputs:
     verbose: true
 
-- task: Npm@1
-  displayName: npm build
+- task: CmdLine@1
+  displayName: Build
   inputs:
-    command: custom
-    verbose: false
-    customCommand: 'run build'
+    filename: perl
+    arguments: [% base_dir %]/build.pl "\$(Build.SourcesDirectory)" "\$(Build.SourceBranchName)"
+    workingDirectory: "\$(Build.SourcesDirectory)"
 
 - task: ArchiveFiles@2
   displayName: Archive dist
@@ -17,8 +17,8 @@
     includeRootFolder: false
 
 - task: PublishBuildArtifacts@1
-  displayName: Publish Artifact: drop
+  displayName: Publish Artifact
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    PathtoPublish: "\$(Build.ArtifactStagingDirectory)/\$(Build.BuildId).zip"
 
 

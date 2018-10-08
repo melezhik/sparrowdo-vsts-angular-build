@@ -8,7 +8,12 @@ Sparrowdo module to generate VSTS yaml steps to build angular project.
       build-dir => "cicd/build"
     );
 
+
     $ sparrowdo --local_mode --no_sudo
+
+# Dependencies 
+
+Perl
 
 # Author
 
