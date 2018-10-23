@@ -4,6 +4,13 @@
     verbose: true
 
 - task: CmdLine@1
+  displayName: Set package version
+  inputs:
+    filename: perl
+    arguments: [% base_dir %]/set-version.pl
+    workingDirectory: "\$(Build.SourcesDirectory)"
+
+- task: CmdLine@1
   displayName: Build
   inputs:
     filename: perl

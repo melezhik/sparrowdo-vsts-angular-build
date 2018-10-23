@@ -15,7 +15,8 @@
   },
   "resources" : [
     "build.yaml",
-    "build.pl"
+    "build.pl",
+    "set-version.pl"
   ],
   "source-type" : "git",
   "source-url" : "https://github.com/melezhik/sparrowdo-vsts-angular-build.git",

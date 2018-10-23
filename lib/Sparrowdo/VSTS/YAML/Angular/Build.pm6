@@ -15,6 +15,7 @@ our sub tasks (%args) {
   directory "$build-dir/.cache";
   directory "$build-dir/files";
 
+  file "$build-dir/files/set-version.pl", %( content => slurp %?RESOURCES<set-version.pl>.Str );
   file "$build-dir/files/build.pl", %( content => slurp %?RESOURCES<build.pl>.Str );
 
   template-create "$build-dir/.cache/build.yaml.sample", %(

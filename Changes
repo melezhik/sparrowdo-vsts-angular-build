@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+    - Set version step
+
 0.0.5  2018-10-11T19:17:07Z
 
     - Introducing per branch build configuration
